@@ -32,15 +32,15 @@
 
         @font-face {
             font-family: "Doto";
-            src: url("/Fonts/Doto/static/Doto-Bold.ttf") format("truetype");
+            src: url("{{ "Fonts/Doto/static/Doto-Bold.ttf" | relURL }}") format("truetype");
             font-weight: normal;
             font-style: normal;
-}
+        }
+
         body {
             font-family: "Doto", sans-serif;
             font-size: 13px;
         }
-        
 
 
         /* -------------------------
@@ -64,11 +64,11 @@
             font-size: 12px;
 
             text-decoration: none;
-}
+        }
 
         .home-link:hover {
             text-decoration: underline;
-}
+        }
 
 
         .navigation {
@@ -93,12 +93,13 @@
             text-decoration: underline;
         }
 
+
         .navigation a.active {
-    text-decoration: underline;
-    text-decoration-color: #000000;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px;
-}
+            text-decoration: underline;
+            text-decoration-color: #000000;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
 
 
         /* -------------------------
@@ -185,31 +186,31 @@
         ------------------------- */
 
         .project-overlay {
-    position: absolute;
+            position: absolute;
 
-    inset: 0;
+            inset: 0;
 
-    display: flex;
+            display: flex;
 
-    flex-direction: column;
+            flex-direction: column;
 
-    justify-content: center;
+            justify-content: center;
 
-    align-items: center;
+            align-items: center;
 
-    padding: 18px;
+            padding: 18px;
 
-    background: rgba(219, 24, 24, 0.92);
+            background: rgba(219, 24, 24, 0.92);
 
-    color: #fffdf7;
+            color: #fffdf7;
 
-    text-align: center;
+            text-align: center;
 
-    opacity: 0;
+            opacity: 0;
 
-    transition:
-        opacity 0.3s ease;
-}
+            transition:
+                opacity 0.3s ease;
+        }
 
 
         .project-role {
@@ -339,28 +340,23 @@
 
     <header>
 
-    <a href="/" class="home-link">
-        Yorn Slootjes
-    </a>
-
-    <nav class="navigation">
-
-        <a href="/work/" class="active">
-            Work
+        <a href="{{ "/" | relURL }}" class="home-link">
+            Yorn Slootjes
         </a>
 
-        <a href="/about/">
-            About
-        </a>
+        <nav class="navigation">
 
-    </nav>
+            <a href="{{ "work/" | relURL }}" class="active">
+                Work
+            </a>
 
-</header>
+            <a href="{{ "about/" | relURL }}">
+                About
+            </a>
 
-
+        </nav>
 
     </header>
-
 
 
     <!-- WORK -->
@@ -380,7 +376,7 @@
             <article class="project">
 
                 <img
-                    src="/images/posters/DeManager.jpeg"
+                    src="/images/poster/DeManager.jpeg"
                     alt="De Manager"
                 >
 
@@ -408,7 +404,7 @@
             <article class="project">
 
                 <img
-                    src="/images/posters/BFFs.jpeg"
+                    src="{{ "images/posters/BFFs.jpeg" | relURL }}"
                     alt="BFFs"
                 >
 
@@ -436,7 +432,7 @@
             <article class="project">
 
                 <img
-                    src="/images/posters/TotdeLaatsteNoot_1984x2880.png"
+                    src="{{ "images/posters/TotdeLaatsteNoot_1984x2880.png" | relURL }}"
                     alt="Tot de Laatste Noot"
                 >
 
@@ -459,13 +455,12 @@
             </article>
 
 
-
             <!-- 04 — TOUTES DIRECTIONS -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/ToutesDirections.jpg"
+                    src="{{ "images/posters/ToutesDirections.jpg" | relURL }}"
                     alt="Toutes Directions"
                 >
 
@@ -488,13 +483,12 @@
             </article>
 
 
-
             <!-- 05 — ORAVA -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/TheSquirrel.jpg"
+                    src="{{ "images/posters/TheSquirrel.jpg" | relURL }}"
                     alt="Orava"
                 >
 
@@ -517,13 +511,12 @@
             </article>
 
 
-
             <!-- 06 — BECOMING -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/Becoming.jpg"
+                    src="{{ "images/posters/Becoming.jpg" | relURL }}"
                     alt="Becoming"
                 >
 
@@ -546,13 +539,12 @@
             </article>
 
 
-
             <!-- 07 — HOME GAME -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/HomeGame.jpg"
+                    src="{{ "images/posters/HomeGame.jpg" | relURL }}"
                     alt="Home Game"
                 >
 
@@ -575,13 +567,12 @@
             </article>
 
 
-
             <!-- 08 — ZEG HET ALS JE GAAT -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/Zeghetalsjegaat.png"
+                    src="{{ "images/posters/Zeghetalsjegaat.png" | relURL }}"
                     alt="Zeg het als je gaat"
                 >
 
@@ -604,13 +595,12 @@
             </article>
 
 
-
             <!-- 09 — JANUARI -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/Januari_Poster_2024.jpg"
+                    src="{{ "images/posters/Januari_Poster_2024.jpg" | relURL }}"
                     alt="Januari"
                 >
 
@@ -633,13 +623,12 @@
             </article>
 
 
-
             <!-- 10 — TOEN WE JONGENS WAREN -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/ToenWeJongensWaren_Poster_2024.jpg"
+                    src="{{ "images/posters/ToenWeJongensWaren_Poster_2024.jpg" | relURL }}"
                     alt="Toen We Jongens Waren"
                 >
 
@@ -662,13 +651,12 @@
             </article>
 
 
-
             <!-- 11 — DOODGEWOON -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/Doodgewoon.jpg"
+                    src="{{ "images/posters/Doodgewoon.jpg" | relURL }}"
                     alt="Doodgewoon"
                 >
 
@@ -691,13 +679,12 @@
             </article>
 
 
-
             <!-- 12 — VADERS ZIJN OOK ZONEN -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/VadersZijnOokZonen_Poster.jpg"
+                    src="{{ "images/posters/VadersZijnOokZonen_Poster.jpg" | relURL }}"
                     alt="Vader zijn ook zonen"
                 >
 
@@ -720,13 +707,12 @@
             </article>
 
 
-
             <!-- 13 — KALF -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/Kalf_Poster_2024.jpg"
+                    src="{{ "images/posters/Kalf_Poster_2024.jpg" | relURL }}"
                     alt="Kalf"
                 >
 
@@ -749,13 +735,12 @@
             </article>
 
 
-
-            <!-- 14 — HARDCODE NEVER DIES -->
+            <!-- 14 — HARDCORE NEVER DIES -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/HardcoreNeverDies.png"
+                    src="{{ "images/posters/HardcoreNeverDies.png" | relURL }}"
                     alt="Hardcore Never Dies"
                 >
 
@@ -766,7 +751,7 @@
                     </div>
 
                     <div class="project-title">
-                        Hardcode Never Dies
+                        Hardcore Never Dies
                     </div>
 
                     <div class="project-director">
@@ -777,13 +762,13 @@
 
             </article>
 
-            
-            <!-- 15 — VENTANAS ABIERTAS -->
+
+            <!-- 15 — TURBINE -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/Turbine_Poster_2024.jpg"
+                    src="{{ "images/posters/Turbine_Poster_2024.jpg" | relURL }}"
                     alt="Turbine"
                 >
 
@@ -805,15 +790,14 @@
 
             </article>
 
-        
 
             <!-- 16 — THE RESURRECTION OF A LEAF -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/TheResurrectionofaleaf_Poster_203.jpg"
-                    alt="The Resurrection of a leaf"
+                    src="{{ "images/posters/TheResurrectionofaLeaf_Poster_203.jpg" | relURL }}"
+                    alt="The Resurrection of a Leaf"
                 >
 
                 <div class="project-overlay">
@@ -835,14 +819,13 @@
             </article>
 
 
-
             <!-- 17 — KING RIDWAN -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/KingRidwan_Poster_2024.jpg"
-                    alt="Zeg het als je gaat"
+                    src="{{ "images/posters/KingRidwan_Poster_2024.jpg" | relURL }}"
+                    alt="King Ridwan"
                 >
 
                 <div class="project-overlay">
@@ -864,13 +847,12 @@
             </article>
 
 
-
             <!-- 18 — WIJ WAREN 23 -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/WijWaren23_Poster_2023.jpg"
+                    src="{{ "images/posters/WijWaren23_Poster_2023.jpg" | relURL }}"
                     alt="Wij Waren 23"
                 >
 
@@ -893,13 +875,12 @@
             </article>
 
 
-
             <!-- 19 — IK MEER VAN JOU -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/Ikmeervanjou_992x1440.png"
+                    src="{{ "images/posters/Ikmeervanjou_992x1440.png" | relURL }}"
                     alt="Ik meer van jou"
                 >
 
@@ -922,13 +903,12 @@
             </article>
 
 
-
             <!-- 20 — VENTANAS ABIERTAS -->
 
             <article class="project">
 
                 <img
-                    src="/images/posters/Ventanas_Abiertas_Poster_2022.jpg"
+                    src="{{ "images/posters/Ventanas_Abiertas_Poster_2022.jpg" | relURL }}"
                     alt="Ventanas Abiertas"
                 >
 
@@ -959,3 +939,4 @@
 </body>
 
 </html>
+
