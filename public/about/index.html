@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About — Yorn Slootjes</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+
+            width: 100%;
+            min-height: 100%;
+
+            background: #fffdf7;
+            color: #000000;
+        }
+
+
+         
+
+        @font-face {
+            font-family: "Doto";
+            src: url("/Fonts/Doto/static/Doto-Bold.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        body {
+            font-family: "Doto", sans-serif;
+            font-size: 13px;
+        }
+
+
+         
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+
+         
+
+        .page {
+            min-height: 100dvh;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+         
+
+        .topbar {
+            width: 100%;
+
+            padding: 28px 4vw 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            flex-shrink: 0;
+        }
+
+        .home-link {
+            font-size: 12px;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 38px;
+        }
+
+        .navigation a {
+            font-size: 12px;
+        }
+
+        .navigation a.active {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+
+
+         
+
+        .about {
+            width: 800px;
+
+             
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 400px 360px;
+            gap: 40px;
+
+            align-items: start;
+        }
+
+
+         
+
+        .photo {
+            width: 400px;
+            height: 600px;
+
+            background: #eeeae1;
+            overflow: hidden;
+        }
+
+        .photo img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+         
+
+        .about-text {
+            padding-top: 2px;
+        }
+
+        .about-text p {
+            margin: 0 0 28px;
+
+            font-size: 14px;
+            line-height: 1.28;
+            letter-spacing: -0.2px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-text strong {
+            font-weight: 700;
+        }
+
+
+         
+
+        .contact-bar {
+            width: 92vw;
+
+            margin: 0 auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+             
+            border-top: 1px solid #000000;
+
+            flex-shrink: 0;
+        }
+
+        .contact-item {
+            position: relative;
+
+            min-height: 110px;
+
+            padding: 22px 24px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            color: #000000;
+            text-decoration: none;
+
+            cursor: pointer;
+        }
+
+        .phone-item {
+            border-left: 1px solid #000000;
+        }
+
+        .contact-item:hover {
+            background: #000000;
+            color: #fffdf7;
+
+            text-decoration: none;
+        }
+
+        .contact-label {
+            font-size: 10px;
+        }
+
+        .contact-value {
+            font-size: 14px;
+        }
+
+        .copy-message {
+            position: absolute;
+
+            right: 24px;
+            bottom: 24px;
+
+            font-size: 9px;
+
+            opacity: 0;
+
+            transition: opacity 0.2s ease;
+        }
+
+        .copy-message.visible {
+            opacity: 1;
+        }
+
+
+         
+
+        @media (max-height: 800px) and (min-width: 851px) {
+
+            .about {
+                transform: scale(0.88);
+                transform-origin: center center;
+            }
+
+        }
+
+
+         
+
+        @media (max-width: 850px) {
+
+            .about {
+                width: calc(100vw - 40px);
+
+                grid-template-columns:
+                    minmax(0, 1fr)
+                    minmax(0, 1fr);
+
+                gap: 25px;
+            }
+
+            .photo {
+                width: 100%;
+                height: auto;
+
+                aspect-ratio: 2 / 3;
+            }
+
+            .about-text p {
+                font-size: 14px;
+            }
+
+            .contact-bar {
+                width: calc(100vw - 40px);
+            }
+        }
+
+
+         
+
+        @media (max-width: 600px) {
+
+            .page {
+                min-height: 100dvh;
+            }
+
+            .topbar {
+                padding: 22px 20px 0;
+            }
+
+            .navigation {
+                gap: 20px;
+            }
+
+            .about {
+                width: calc(100vw - 40px);
+
+                margin: 80px auto 70px;
+
+                display: block;
+
+                transform: none;
+            }
+
+            .photo {
+                width: min(100%, 400px);
+
+                height: auto;
+
+                aspect-ratio: 2 / 3;
+
+                margin-bottom: 40px;
+            }
+
+            .about-text {
+                max-width: 500px;
+            }
+
+            .about-text p {
+                font-size: 15px;
+                line-height: 1.3;
+            }
+
+
+             
+
+            .contact-bar {
+                width: calc(100vw - 40px);
+
+                margin-top: auto;
+
+                grid-template-columns: 1fr;
+            }
+
+            .phone-item {
+                border-left: none;
+
+                border-top: 1px solid #000000;
+            }
+
+            .contact-item {
+                min-height: 100px;
+
+                padding: 18px 20px;
+            }
+
+            .contact-value {
+                font-size: 13px;
+            }
+
+            .copy-message {
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    
+
+    <div class="topbar">
+
+        <a href="/" class="home-link">
+            YORN SLOOTJES
+        </a>
+
+        <nav class="navigation">
+
+            <a href="/work/">
+                Work
+            </a>
+
+            <a href="/about/" class="active">
+                About
+            </a>
+
+        </nav>
+
+    </div>
+
+
+
+    
+
+    <main class="about">
+
+
+        
+
+        <div class="photo">
+
+            <img
+                src="/images/yornslootjes.jpg"
+                alt="Yorn Slootjes"
+            >
+
+        </div>
+
+
+
+        
+
+        <div class="about-text">
+
+            <p>
+                Yorn began his creative ventures during his studies at the
+                <strong>Herman Brood Academy</strong>, where he produced and
+                performed electronic music. His experimentation with sound and
+                live visuals sparked a fascination with the interplay between
+                image and sound. Combined with a strong desire for collaboration,
+                this led him to study Sound Design at the
+                <strong>Netherlands Film Academy</strong>, where he graduated
+                in 2024.
+            </p>
+
+
+            <p>
+                What characterizes Yorn is his strong sense of conceptual
+                thinking — <strong>meaning before technique</strong>. He is
+                fascinated by sound as a phenomenon: something inherently wild
+                and uncontrollable. Yet when combined with film and storytelling,
+                sound must be shaped and structured — a tension that makes the
+                craft endlessly intriguing. Yorn embraces an approach rooted in
+                experimentation and chance. Only by truly listening can meaning
+                emerge within sound design.
+            </p>
+
+
+            <p>
+                Yorn works across short and feature-length films, both fiction
+                and documentary. <strong>His work spans the full spectrum of
+                post-production sound — from sound design and editing to
+                re-recording mixing</strong>. He operates from his home
+                workstation in Barendrecht, near Rotterdam, and frequently
+                collaborates in various studios and with fellow sound
+                professionals.
+            </p>
+
+        </div>
+
+    </main>
+
+
+
+    
+
+    <section class="contact-bar">
+
+
+        
+
+        <div
+            class="contact-item email-item"
+            onclick="copyEmail()"
+            role="button"
+            tabindex="0"
+            onkeydown="handleEmailKey(event)"
+        >
+
+            <span class="contact-label">
+                EMAIL
+            </span>
+
+            <span class="contact-value" id="email-address">
+                yornslootjes@proton.me
+            </span>
+
+            <span class="copy-message" id="copy-message">
+                COPIED
+            </span>
+
+        </div>
+
+
+
+        
+
+        <a
+            href="tel:+31612345678"
+            class="contact-item phone-item"
+        >
+
+            <span class="contact-label">
+                PHONE
+            </span>
+
+            <span class="contact-value">
+                +31 6 18 08 50 41
+            </span> 
+
+             <span class="copy-message" id="copy-message">
+                COPIED
+            </span>
+
+
+        </a>
+
+    </section>
+
+
+</div>
+
+
+
+
+
+<script>
+
+    function copyEmail() {
+
+        const email =
+            document
+            .getElementById("email-address")
+            .textContent
+            .trim();
+
+        const message =
+            document.getElementById("copy-message");
+
+        navigator.clipboard.writeText(email);
+
+        message.classList.add("visible");
+
+        setTimeout(function () {
+
+            message.classList.remove("visible");
+
+        }, 1500);
+    }
+
+
+    function handleEmailKey(event) {
+
+        if (
+            event.key === "Enter" ||
+            event.key === " "
+        ) {
+
+            event.preventDefault();
+
+            copyEmail();
+        }
+    }
+
+</script>
+
+
+</body>
+</html>

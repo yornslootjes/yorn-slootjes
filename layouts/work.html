@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Work — Yorn Slootjes</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+
+            background: #fffdf7;
+            color: #db1818;
+        }
+
+
+        @font-face {
+            font-family: "Doto";
+            src: url("/Fonts/Doto/static/Doto-Bold.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+}
+        body {
+            font-family: "Doto", sans-serif;
+            font-size: 13px;
+        }
+        
+
+
+        /* -------------------------
+           HEADER
+        ------------------------- */
+
+        header {
+            width: 100%;
+
+            padding: 28px 4vw 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+
+        .home-link {
+            color: #111111;
+
+            font-size: 12px;
+
+            text-decoration: none;
+}
+
+        .home-link:hover {
+            text-decoration: underline;
+}
+
+
+        .navigation {
+            display: flex;
+
+            gap: 38px;
+
+            margin-left: auto;
+        }
+
+
+        .navigation a {
+            color: #111111;
+
+            text-decoration: none;
+
+            font-size: 12px;
+        }
+
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+
+        .navigation a.active {
+    text-decoration: underline;
+    text-decoration-color: #000000;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
+
+        /* -------------------------
+           WORK PAGE
+        ------------------------- */
+
+        .work-page {
+            width: 92vw;
+
+            margin: 0px auto 120px;
+        }
+
+
+        .work-heading {
+            margin: 0 0 30px;
+
+            font-size: 0px;
+            font-weight: normal;
+        }
+
+
+        /* -------------------------
+           POSTER GRID
+        ------------------------- */
+
+        .poster-grid {
+            display: grid;
+
+            grid-template-columns: repeat(6, 1fr);
+
+            gap: 14px;
+        }
+
+
+        /* -------------------------
+           PROJECT
+        ------------------------- */
+
+        .project {
+            position: relative;
+
+            display: block;
+
+            width: 100%;
+
+            aspect-ratio: 1984 / 2880;
+
+            overflow: hidden;
+
+            background: #f0eee8;
+
+            text-decoration: none;
+        }
+
+
+        /* -------------------------
+           POSTER IMAGE
+        ------------------------- */
+
+        .project img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        /* -------------------------
+           EMPTY POSTER
+        ------------------------- */
+
+        .empty {
+            background: #f0eee8;
+        }
+
+
+        /* -------------------------
+           OVERLAY
+        ------------------------- */
+
+        .project-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 18px;
+
+    background: rgba(219, 24, 24, 0.92);
+
+    color: #fffdf7;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+
+        .project-role {
+            max-width: 95%;
+
+            font-size: 13px;
+
+            line-height: 1.25;
+        }
+
+
+        .project-title {
+            margin-top: 16px;
+
+            font-size: 10px;
+
+            color: rgba(255, 253, 247, 0.8);
+        }
+
+
+        .project-director {
+            margin-top: 3px;
+
+            font-size: 9px;
+
+            color: rgba(255, 253, 247, 0.65);
+        }
+
+
+        /* -------------------------
+           HOVER
+        ------------------------- */
+
+        .project:hover .project-overlay {
+            opacity: 1;
+        }
+
+
+        .project:hover img {
+            transform: scale(1.02);
+        }
+
+
+        /* -------------------------
+           TABLET
+        ------------------------- */
+
+        @media (max-width: 1100px) {
+
+            .poster-grid {
+                grid-template-columns: repeat(4, 1fr);
+
+                gap: 12px;
+            }
+
+        }
+
+
+        /* -------------------------
+           MOBILE
+        ------------------------- */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 22px 20px 0;
+            }
+
+
+            .navigation {
+                gap: 20px;
+            }
+
+
+            .work-page {
+                width: calc(100vw - 40px);
+
+                margin: 160px auto 80px;
+            }
+
+
+            .work-heading {
+                margin-bottom: 20px;
+            }
+
+
+            .poster-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 8px;
+            }
+
+
+            .project-overlay {
+                padding: 12px;
+            }
+
+
+            .project-role {
+                font-size: 11px;
+            }
+
+
+            .project-title {
+                margin-top: 10px;
+
+                font-size: 9px;
+            }
+
+
+            .project-director {
+                font-size: 8px;
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+    <a href="/" class="home-link">
+        Yorn Slootjes
+    </a>
+
+    <nav class="navigation">
+
+        <a href="/work/" class="active">
+            Work
+        </a>
+
+        <a href="/about/">
+            About
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+    </header>
+
+
+
+    <!-- WORK -->
+
+    <main class="work-page">
+
+        <h2 class="work-heading">
+            work
+        </h2>
+
+
+        <div class="poster-grid">
+
+
+            <!-- 01 — DE MANAGER -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/DeManager.jpeg"
+                    alt="De Manager"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Dialogue Edit &amp; Additional Sound Design
+                    </div>
+
+                    <div class="project-title">
+                        De Manager
+                    </div>
+
+                    <div class="project-director">
+                        Maartje Bakers
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 02 — BFF's -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/BFFs.jpeg"
+                    alt="BFFs"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Design
+                    </div>
+
+                    <div class="project-title">
+                        BFF's
+                    </div>
+
+                    <div class="project-director">
+                        Valerie Rutjes
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- 03 — TOT DE LAATSTE NOOT -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/TotdeLaatsteNoot_1984x2880.png"
+                    alt="Tot de Laatste Noot"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Dialogue Edit
+                    </div>
+
+                    <div class="project-title">
+                        Tot de Laatste Noot
+                    </div>
+
+                    <div class="project-director">
+                        Marlou van den Berge
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 04 — TOUTES DIRECTIONS -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/ToutesDirections.jpg"
+                    alt="Toutes Directions"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Dialogue Edit
+                    </div>
+
+                    <div class="project-title">
+                        Toutes Directions
+                    </div>
+
+                    <div class="project-director">
+                        Noël Loozen
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 05 — ORAVA -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/TheSquirrel.jpg"
+                    alt="Orava"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Edit &amp; Mix
+                    </div>
+
+                    <div class="project-title">
+                        Orava
+                    </div>
+
+                    <div class="project-director">
+                        Markus Lehmusruusu
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 06 — BECOMING -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/Becoming.jpg"
+                    alt="Becoming"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Edit
+                    </div>
+
+                    <div class="project-title">
+                        Becoming
+                    </div>
+
+                    <div class="project-director">
+                        Zhannat Alshanova
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 07 — HOME GAME -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/HomeGame.jpg"
+                    alt="Home Game"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Edit
+                    </div>
+
+                    <div class="project-title">
+                        Home Game
+                    </div>
+
+                    <div class="project-director">
+                        Lidija Zelovic
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 08 — ZEG HET ALS JE GAAT -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/Zeghetalsjegaat.png"
+                    alt="Zeg het als je gaat"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Design
+                    </div>
+
+                    <div class="project-title">
+                        Zeg het als je gaat
+                    </div>
+
+                    <div class="project-director">
+                        Matthijs Sluis
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 09 — JANUARI -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/Januari_Poster_2024.jpg"
+                    alt="Januari"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Design w/ Levi Cuijpers and Zita Leemans
+                    </div>
+
+                    <div class="project-title">
+                        Januari
+                    </div>
+
+                    <div class="project-director">
+                        Jetske Lieber
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 10 — TOEN WE JONGENS WAREN -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/ToenWeJongensWaren_Poster_2024.jpg"
+                    alt="Toen We Jongens Waren"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Recording w/ Sanne Breij
+                    </div>
+
+                    <div class="project-title">
+                        Toen we jongens waren
+                    </div>
+
+                    <div class="project-director">
+                        Merel Hogerheijde
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 11 — DOODGEWOON -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/Doodgewoon.jpg"
+                    alt="Doodgewoon"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Mix
+                    </div>
+
+                    <div class="project-title">
+                        Doodgewoon
+                    </div>
+
+                    <div class="project-director">
+                        Ronald Zuidinga
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 12 — VADERS ZIJN OOK ZONEN -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/VadersZijnOokZonen_Poster.jpg"
+                    alt="Vader zijn ook zonen"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Recording
+                    </div>
+
+                    <div class="project-title">
+                        Vaders zijn ook Zonen
+                    </div>
+
+                    <div class="project-director">
+                        Sammy Shefa Idris
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 13 — KALF -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/Kalf_Poster_2024.jpg"
+                    alt="Kalf"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Mix
+                    </div>
+
+                    <div class="project-title">
+                        Kalf
+                    </div>
+
+                    <div class="project-director">
+                        Dirkje Duwel
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 14 — HARDCODE NEVER DIES -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/HardcoreNeverDies.png"
+                    alt="Hardcore Never Dies"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Intern
+                    </div>
+
+                    <div class="project-title">
+                        Hardcode Never Dies
+                    </div>
+
+                    <div class="project-director">
+                        Jim Taihuttu
+                    </div>
+
+                </div>
+
+            </article>
+
+            
+            <!-- 15 — VENTANAS ABIERTAS -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/Turbine_Poster_2024.jpg"
+                    alt="Turbine"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Effects Edit
+                    </div>
+
+                    <div class="project-title">
+                        Ventanas Abiertas
+                    </div>
+
+                    <div class="project-director">
+                        Jos Mauro Witteveen
+                    </div>
+
+                </div>
+
+            </article>
+
+        
+
+            <!-- 16 — THE RESURRECTION OF A LEAF -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/TheResurrectionofaleaf_Poster_203.jpg"
+                    alt="The Resurrection of a leaf"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Effects Edit
+                    </div>
+
+                    <div class="project-title">
+                        The Resurrection of a Leaf
+                    </div>
+
+                    <div class="project-director">
+                        Lemuël de Graav
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 17 — KING RIDWAN -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/KingRidwan_Poster_2024.jpg"
+                    alt="Zeg het als je gaat"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Recording
+                    </div>
+
+                    <div class="project-title">
+                        King Ridwan
+                    </div>
+
+                    <div class="project-director">
+                        Sammy Shefa Idris
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 18 — WIJ WAREN 23 -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/WijWaren23_Poster_2023.jpg"
+                    alt="Wij Waren 23"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Edit
+                    </div>
+
+                    <div class="project-title">
+                        Wij Waren 23
+                    </div>
+
+                    <div class="project-director">
+                        Matthijs Sluis
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 19 — IK MEER VAN JOU -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/Ikmeervanjou_992x1440.png"
+                    alt="Ik meer van jou"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Design
+                    </div>
+
+                    <div class="project-title">
+                        Ik meer van jou
+                    </div>
+
+                    <div class="project-director">
+                        Nour Alkheder
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- 20 — VENTANAS ABIERTAS -->
+
+            <article class="project">
+
+                <img
+                    src="/images/posters/Ventanas_Abiertas_Poster_2022.jpg"
+                    alt="Ventanas Abiertas"
+                >
+
+                <div class="project-overlay">
+
+                    <div class="project-role">
+                        Sound Effects Edit
+                    </div>
+
+                    <div class="project-title">
+                        Ventanas Abiertas
+                    </div>
+
+                    <div class="project-director">
+                        Jos Mauro Witteveen
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

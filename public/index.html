@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="generator" content="Hugo 0.165.0">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>YORN SLOOTJES — SOUND DESIGN & MIX</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+
+            width: 100%;
+            min-height: 100%;
+
+            background: #fffdf7;
+            color: #db1818;
+        }
+
+
+        @font-face {
+            font-family: "Doto";
+            src: url("/Fonts/Doto/static/Doto-Bold.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        body {
+            font-family: "Doto", sans-serif;
+            font-size: 13px;
+
+            overflow: hidden;
+        }
+
+
+
+         
+
+        .page {
+            position: relative;
+
+            width: 100%;
+            height: 100dvh;
+
+            overflow: hidden;
+        }
+
+
+
+         
+
+        header {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            z-index: 10;
+
+            width: 100%;
+
+            padding: 28px 4vw 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+
+        .navigation {
+            display: flex;
+
+            gap: 38px;
+
+            margin-left: auto;
+        }
+
+
+        .navigation a {
+            color: #111111;
+
+            text-decoration: none;
+
+            font-size: 12px;
+        }
+
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+
+
+
+         
+
+        .service-title {
+            position: absolute;
+
+            top: 28px;
+            left: 4vw;
+
+            width: min(700px, 60vw);
+
+            color: #db1818;
+
+            z-index: 5;
+        }
+
+
+        .service-role {
+            font-size: clamp(28px, 3.2vw, 40px);
+
+            letter-spacing: -0.5px;
+
+            white-space: nowrap;
+        }
+
+
+        .service-name-row {
+            display: flex;
+
+            align-items: center;
+
+            width: 100%;
+
+            margin-top: 6px;
+        }
+
+
+        .service-name {
+            flex-shrink: 0;
+
+            font-size: clamp(20px, 2vw, 25px);
+
+            letter-spacing: 0;
+
+            white-space: nowrap;
+        }
+
+
+
+         
+
+        .sound-graph {
+            flex: 1;
+
+            height: 25px;
+
+            margin-left: 12px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-start;
+
+            gap: 2px;
+
+            overflow: hidden;
+        }
+
+
+        .sound-graph span {
+            display: block;
+
+            width: 2px;
+            min-width: 2px;
+
+            height: 3px;
+
+            background: #000000;
+
+            transform-origin: center;
+
+            transition: height 0.08s linear;
+        }
+
+
+
+         
+
+        .work {
+            position: absolute;
+
+            left: 4vw;
+            right: 4vw;
+            bottom: 15px;
+
+            width: auto;
+
+            margin: 0;
+
+             
+
+            height: min(
+                58dvh,
+                calc(100dvh - 250px)
+            );
+
+            min-height: 280px;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .work-heading {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: baseline;
+
+            width: 100%;
+
+            flex-shrink: 0;
+        }
+
+
+        .work-title {
+            margin: 0 0 18px;
+
+            font-size: 18px;
+
+            font-weight: normal;
+
+            color: #000;
+        }
+
+
+        .see-all {
+            margin-bottom: 18px;
+
+            font-size: 18px;
+
+            color: #000;
+
+            text-decoration: none;
+        }
+
+
+        .see-all:hover {
+            text-decoration: underline;
+
+            text-underline-offset: 3px;
+        }
+
+
+
+         
+
+        .gallery-wrapper {
+            width: 100%;
+
+            flex: 1;
+
+            min-height: 0;
+
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            cursor: grab;
+
+            user-select: none;
+            -webkit-user-select: none;
+
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+            touch-action: pan-x;
+        }
+
+
+        .gallery-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+
+        .gallery-wrapper.dragging {
+            cursor: grabbing;
+        }
+
+
+        .gallery {
+            display: flex;
+
+            gap: 10px;
+
+            width: max-content;
+
+            height: 100%;
+        }
+
+
+
+         
+
+        .project {
+            width: auto;
+
+            height: 100%;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        .project-info {
+            height: 50px;
+
+            margin-bottom: 10px;
+
+            font-size: 10px;
+
+            line-height: 1.35;
+
+            flex-shrink: 0;
+        }
+
+
+        .project-title {
+            font-size: 11px;
+        }
+
+
+        .director {
+            color: #777777;
+        }
+
+
+        .role {
+            color: #777777;
+        }
+
+
+
+         
+
+        .poster {
+            height: calc(
+                100% - 60px
+            );
+
+            width: auto;
+
+            aspect-ratio: 1984 / 2880;
+
+            background: #fffdf7;
+
+            overflow: hidden;
+
+            flex-shrink: 0;
+        }
+
+
+        .poster img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            pointer-events: none;
+
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+
+
+         
+
+        @media (min-width: 1400px) {
+
+            .work {
+                height: 62dvh;
+
+                min-height: 350px;
+            }
+
+        }
+
+
+
+         
+
+        @media (min-width: 701px) and (max-height: 750px) {
+
+            .work {
+                height: calc(
+                    100dvh - 210px
+                );
+
+                min-height: 250px;
+            }
+
+
+            .project-info {
+                height: 44px;
+
+                margin-bottom: 8px;
+
+                font-size: 9px;
+            }
+
+
+            .project-title {
+                font-size: 10px;
+            }
+
+
+            .poster {
+                height: calc(
+                    100% - 52px
+                );
+            }
+
+
+            .work-title,
+            .see-all {
+                font-size: 16px;
+            }
+
+        }
+
+
+
+         
+
+        @media (max-width: 700px) {
+
+            html,
+            body {
+                min-height: 100%;
+
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+
+
+            body {
+                overflow-y: auto;
+            }
+
+
+            .page {
+                height: auto;
+
+                min-height: 100dvh;
+
+                overflow: visible;
+            }
+
+
+            header {
+                position: relative;
+
+                padding: 22px 20px 0;
+            }
+
+
+            .navigation {
+                gap: 20px;
+            }
+
+
+            .service-title {
+                position: relative;
+
+                top: auto;
+                left: auto;
+
+                width: calc(100vw - 40px);
+
+                margin: 22px 20px 0;
+            }
+
+
+            .service-role {
+                font-size: 28px;
+
+                letter-spacing: -0.5px;
+            }
+
+
+            .service-name {
+                font-size: 20px;
+            }
+
+
+            .sound-graph {
+                margin-left: 10px;
+
+                height: 20px;
+
+                gap: 2px;
+            }
+
+
+            .sound-graph span {
+                width: 2px;
+
+                min-width: 2px;
+            }
+
+
+            .work {
+                position: relative;
+
+                left: auto;
+                right: auto;
+                bottom: auto;
+
+                width: calc(100vw - 40px);
+
+                height: auto;
+
+                min-height: 0;
+
+                margin: 70px 20px 30px;
+
+                display: block;
+            }
+
+
+            .work-heading {
+                margin-bottom: 0;
+            }
+
+
+            .work-title {
+                margin-bottom: 14px;
+
+                font-size: 16px;
+            }
+
+
+            .see-all {
+                margin-bottom: 14px;
+
+                font-size: 16px;
+            }
+
+
+            .gallery-wrapper {
+                width: calc(100vw - 40px);
+
+                height: auto;
+
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+
+
+            .gallery {
+                height: auto;
+
+                gap: 8px;
+            }
+
+
+            .project {
+                width: 190px;
+
+                height: auto;
+
+                display: block;
+            }
+
+
+            .project-info {
+                height: 50px;
+
+                margin-bottom: 8px;
+            }
+
+
+            .poster {
+                width: 190px;
+
+                height: auto;
+
+                aspect-ratio: 1984 / 2880;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="page">
+
+
+        
+
+        <header class="site-header">
+
+            <nav class="navigation">
+
+                <a href="/work/">Work</a>
+
+                <a href="/about/">About</a>
+
+            </nav>
+
+        </header>
+
+
+
+        
+
+        <div class="service-title">
+
+            <div class="service-role">
+                SOUND DESIGN &amp; MIX
+            </div>
+
+
+            <div class="service-name-row">
+
+                <div class="service-name">
+                    YORN SLOOTJES
+                </div>
+
+
+                
+
+                <div
+                    class="sound-graph"
+                    id="soundGraph"
+                    aria-hidden="true"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+
+        
+
+        <main class="work">
+
+
+            
+
+            <div class="work-heading">
+
+                <h2 class="work-title">
+                    Recent Work
+                </h2>
+
+
+                <a
+                    href="/work/"
+                    class="see-all"
+                >
+                    See All &gt;
+                </a>
+
+            </div>
+
+
+
+            
+
+            <div
+                class="gallery-wrapper"
+                id="gallery"
+            >
+
+
+                <div class="gallery">
+
+
+
+                    
+
+                    <article class="project">
+
+                        <div class="project-info">
+
+                            <div class="project-title">
+                                De Manager
+                            </div>
+
+                            <div class="director">
+                                Maartje Bakers
+                            </div>
+
+                            <div class="role">
+                                Dialogue Edit &amp; Additional Sound Design
+                            </div>
+
+                        </div>
+
+
+                        <div class="poster">
+
+                            <img
+                                src="/images/posters/DeManager.jpeg"
+                                alt="De Manager"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+
+                    
+
+                    <article class="project">
+
+                        <div class="project-info">
+
+                            <div class="project-title">
+                                Tot de Laatste Noot
+                            </div>
+
+                            <div class="director">
+                                Marlou van den Berge
+                            </div>
+
+                            <div class="role">
+                                Dialogue Edit
+                            </div>
+
+                        </div>
+
+
+                        <div class="poster">
+
+                            <img
+                                src="/images/posters/TotdeLaatsteNoot_1984x2880.png"
+                                alt="Tot de Laatste Noot"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+
+                    
+
+                    <article class="project">
+
+                        <div class="project-info">
+
+                            <div class="project-title">
+                                Toutes Directions
+                            </div>
+
+                            <div class="director">
+                                Noël Loozen
+                            </div>
+
+                            <div class="role">
+                                Dialogue Edit
+                            </div>
+
+                        </div>
+
+
+                        <div class="poster">
+
+                            <img
+                                src="/images/posters/ToutesDirections.jpg"
+                                alt="Toutes Directions"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+
+                    
+
+                    <article class="project">
+
+                        <div class="project-info">
+
+                            <div class="project-title">
+                                Orava
+                            </div>
+
+                            <div class="director">
+                                Markus Lehmusruusu
+                            </div>
+
+                            <div class="role">
+                                Mix &amp; Sound Edit
+                            </div>
+
+                        </div>
+
+
+                        <div class="poster">
+
+                            <img
+                                src="/images/posters/TheSquirrel.jpg"
+                                alt="Orava"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+
+                    
+
+                    <article class="project">
+
+                        <div class="project-info">
+
+                            <div class="project-title">
+                                Becoming
+                            </div>
+
+                            <div class="director">
+                                Zhannat Alshanova
+                            </div>
+
+                            <div class="role">
+                                Sound Edit
+                            </div>
+
+                        </div>
+
+
+                        <div class="poster">
+
+                            <img
+                                src="/images/posters/Becoming.jpg"
+                                alt="Becoming"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+
+                    
+
+                    <article class="project">
+
+                        <div class="project-info">
+
+                            <div class="project-title">
+                                Home Game
+                            </div>
+
+                            <div class="director">
+                                Lidija Zelovic
+                            </div>
+
+                            <div class="role">
+                                Sound Edit
+                            </div>
+
+                        </div>
+
+
+                        <div class="poster">
+
+                            <img
+                                src="/images/posters/HomeGame.jpg"
+                                alt="Home Game"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+
+                    
+
+                    <article class="project">
+
+                        <div class="project-info">
+
+                            <div class="project-title">
+                                Zeg het als je gaat
+                            </div>
+
+                            <div class="director">
+                                Matthijs Sluis
+                            </div>
+
+                            <div class="role">
+                                Sound Design
+                            </div>
+
+                        </div>
+
+
+                        <div class="poster">
+
+                            <img
+                                src="/images/posters/Zeghetalsjegaat.png"
+                                alt="Zeg het als je gaat"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+    </div>
+
+
+
+    
+
+    <script>
+
+        const gallery =
+            document.getElementById("gallery");
+
+
+        let isDragging = false;
+
+        let startX = 0;
+
+        let startScrollLeft = 0;
+
+
+
+        gallery.addEventListener(
+            "pointerdown",
+            function (event) {
+
+                
+
+
+                if (
+                    event.pointerType === "touch"
+                ) {
+                    return;
+                }
+
+
+                isDragging = true;
+
+                startX = event.clientX;
+
+                startScrollLeft =
+                    gallery.scrollLeft;
+
+                gallery.classList.add(
+                    "dragging"
+                );
+
+                gallery.setPointerCapture(
+                    event.pointerId
+                );
+
+            }
+        );
+
+
+
+        gallery.addEventListener(
+            "pointermove",
+            function (event) {
+
+                if (!isDragging) {
+                    return;
+                }
+
+
+                const distance =
+                    event.clientX - startX;
+
+
+                gallery.scrollLeft =
+                    startScrollLeft - distance;
+
+            }
+        );
+
+
+
+        gallery.addEventListener(
+            "pointerup",
+            function (event) {
+
+                if (!isDragging) {
+                    return;
+                }
+
+
+                isDragging = false;
+
+                gallery.classList.remove(
+                    "dragging"
+                );
+
+
+                gallery.releasePointerCapture(
+                    event.pointerId
+                );
+
+            }
+        );
+
+
+
+        gallery.addEventListener(
+            "pointercancel",
+            function () {
+
+                isDragging = false;
+
+                gallery.classList.remove(
+                    "dragging"
+                );
+
+            }
+        );
+
+
+
+        gallery.addEventListener(
+            "lostpointercapture",
+            function () {
+
+                isDragging = false;
+
+                gallery.classList.remove(
+                    "dragging"
+                );
+
+            }
+        );
+
+
+
+        
+
+
+        const soundGraph =
+            document.getElementById(
+                "soundGraph"
+            );
+
+
+        const barCount = 32;
+
+
+        
+
+
+        for (
+            let i = 0;
+            i < barCount;
+            i++
+        ) {
+
+            const bar =
+                document.createElement("span");
+
+
+            soundGraph.appendChild(bar);
+
+        }
+
+
+        const bars =
+            soundGraph.querySelectorAll(
+                "span"
+            );
+
+
+        let time = 0;
+
+
+
+        
+
+
+        function animateSoundGraph() {
+
+            time += 0.045;
+
+
+            bars.forEach(
+                function (bar, index) {
+
+
+                    
+
+
+                    const wave1 =
+                        Math.sin(
+                            time * 2.2 +
+                            index * 0.65
+                        );
+
+
+                    const wave2 =
+                        Math.sin(
+                            time * 3.7 +
+                            index * 1.15
+                        );
+
+
+                    const wave3 =
+                        Math.sin(
+                            time * 1.1 -
+                            index * 0.35
+                        );
+
+
+
+                    let value =
+                        wave1 +
+                        wave2 * 0.45 +
+                        wave3 * 0.25;
+
+
+                    value =
+                        Math.abs(value);
+
+
+
+                    
+
+
+                    const centre =
+                        Math.exp(
+                            -Math.pow(
+                                (index - 15) / 7,
+                                2
+                            )
+                        );
+
+
+
+                    value =
+                        value * 0.65 +
+                        centre *
+                        Math.abs(
+                            Math.sin(
+                                time * 2.8
+                            )
+                        ) *
+                        0.35;
+
+
+
+                    
+
+
+                    const height =
+                        2 + value * 20;
+
+
+
+                    bar.style.height =
+                        height + "px";
+
+                }
+            );
+
+
+            requestAnimationFrame(
+                animateSoundGraph
+            );
+
+        }
+
+
+        animateSoundGraph();
+
+    </script>
+
+
+</body>
