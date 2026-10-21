@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/yorn-slootjes/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=yorn-slootjes/livereload" data-no-instant defer></script>
-
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
 
     <meta
@@ -12,27 +11,22 @@
 
     <title>Work — Yorn Slootjes</title>
 
-
     <style>
-
         * {
             box-sizing: border-box;
         }
-
 
         html,
         body {
             margin: 0;
             padding: 0;
-
             background: #fffdf7;
             color: #db1818;
         }
 
-
         @font-face {
             font-family: "Doto";
-            src: url("/yorn-slootjes/Fonts/Doto/static/Doto-Bold.ttf") format("truetype");
+            src: url("/Fonts/Doto/static/Doto-Bold.ttf") format("truetype");
             font-weight: normal;
             font-style: normal;
         }
@@ -42,25 +36,19 @@
             font-size: 13px;
         }
 
-
          
 
         header {
             width: 100%;
-
             padding: 28px 4vw 0;
-
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
         }
 
-
         .home-link {
             color: #111111;
-
             font-size: 12px;
-
             text-decoration: none;
         }
 
@@ -68,29 +56,21 @@
             text-decoration: underline;
         }
 
-
         .navigation {
             display: flex;
-
             gap: 38px;
-
             margin-left: auto;
         }
 
-
         .navigation a {
             color: #111111;
-
             text-decoration: none;
-
             font-size: 12px;
         }
-
 
         .navigation a:hover {
             text-decoration: underline;
         }
-
 
         .navigation a.active {
             text-decoration: underline;
@@ -99,68 +79,55 @@
             text-underline-offset: 4px;
         }
 
-
          
 
         .work-page {
             width: 92vw;
-
             margin: 0px auto 120px;
         }
 
-
         .work-heading {
             margin: 0 0 30px;
-
             font-size: 0px;
             font-weight: normal;
         }
-
 
          
 
         .poster-grid {
             display: grid;
-
             grid-template-columns: repeat(6, 1fr);
-
             gap: 14px;
         }
-
 
          
 
         .project {
             position: relative;
-
             display: block;
-
             width: 100%;
-
             aspect-ratio: 1984 / 2880;
-
             overflow: hidden;
-
             background: #f0eee8;
-
             text-decoration: none;
         }
-
 
          
 
         .project img {
             display: block;
-
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
+            opacity: 0;
             transition:
+                opacity 0.35s ease,
                 transform 0.4s ease;
         }
 
+        .project img.loaded {
+            opacity: 1;
+        }
 
          
 
@@ -168,63 +135,41 @@
             background: #f0eee8;
         }
 
-
          
 
         .project-overlay {
             position: absolute;
-
             inset: 0;
-
             display: flex;
-
             flex-direction: column;
-
             justify-content: center;
-
             align-items: center;
-
             padding: 18px;
-
             background: rgba(219, 24, 24, 0.92);
-
             color: #fffdf7;
-
             text-align: center;
-
             opacity: 0;
-
             transition:
                 opacity 0.3s ease;
         }
 
-
         .project-role {
             max-width: 95%;
-
             font-size: 13px;
-
             line-height: 1.25;
         }
 
-
         .project-title {
             margin-top: 16px;
-
             font-size: 10px;
-
             color: rgba(255, 253, 247, 0.8);
         }
 
-
         .project-director {
             margin-top: 3px;
-
             font-size: 9px;
-
             color: rgba(255, 253, 247, 0.65);
         }
-
 
          
 
@@ -232,24 +177,18 @@
             opacity: 1;
         }
 
-
         .project:hover img {
             transform: scale(1.02);
         }
 
-
          
 
         @media (max-width: 1100px) {
-
             .poster-grid {
                 grid-template-columns: repeat(4, 1fr);
-
                 gap: 12px;
             }
-
         }
-
 
          
 
@@ -259,83 +198,57 @@
                 padding: 22px 20px 0;
             }
 
-
             .navigation {
                 gap: 20px;
             }
 
-
             .work-page {
                 width: calc(100vw - 40px);
-
-                margin: 160px auto 80px;
+                margin: 0px auto 80px;
             }
-
 
             .work-heading {
                 margin-bottom: 20px;
             }
 
-
             .poster-grid {
                 grid-template-columns: repeat(2, 1fr);
-
                 gap: 8px;
             }
-
 
             .project-overlay {
                 padding: 12px;
             }
 
-
             .project-role {
                 font-size: 11px;
             }
 
-
             .project-title {
                 margin-top: 10px;
-
                 font-size: 9px;
             }
-
 
             .project-director {
                 font-size: 8px;
             }
-
         }
-
-
     </style>
-
 </head>
 
-
 <body>
-
 
     
 
     <header>
-
         <a href="/" class="home-link">
-            Yorn Slootjes
+            YORN SLOOTJES
         </a>
 
         <nav class="navigation">
-
-            <a href="/yorn-slootjes/work/" class="active">
-                Work
-            </a>
-
-            <a href="/yorn-slootjes/about/">
-                About
-            </a>
-
+            <a href="/work/">Work</a>
+            <a href="/about/">About</a>
         </nav>
-
     </header>
 
 
@@ -347,21 +260,18 @@
             work
         </h2>
 
-
         <div class="poster-grid">
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/DeManager.jpeg"
+                    data-src="/images/posters/DeManager.jpeg"
                     alt="De Manager"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Dialogue Edit &amp; Additional Sound Design
                     </div>
@@ -373,23 +283,19 @@
                     <div class="project-director">
                         Maartje Bakers
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/BFFs.jpeg"
+                    data-src="/images/posters/BFFs.jpeg"
                     alt="BFFs"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Design
                     </div>
@@ -401,23 +307,19 @@
                     <div class="project-director">
                         Valerie Rutjes
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/TotdeLaatsteNoot_1984x2880.png"
+                    data-src="/images/posters/TotdeLaatsteNoot_1984x2880.png"
                     alt="Tot de Laatste Noot"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Dialogue Edit
                     </div>
@@ -429,23 +331,19 @@
                     <div class="project-director">
                         Marlou van den Berge
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/ToutesDirections.jpg"
+                    data-src="/images/posters/ToutesDirections.jpg"
                     alt="Toutes Directions"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Dialogue Edit
                     </div>
@@ -457,23 +355,19 @@
                     <div class="project-director">
                         Noël Loozen
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/TheSquirrel.jpg"
+                    data-src="/images/posters/TheSquirrel.jpeg"
                     alt="Orava"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Edit &amp; Mix
                     </div>
@@ -485,23 +379,19 @@
                     <div class="project-director">
                         Markus Lehmusruusu
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/Becoming.jpg"
+                    data-src="/images/posters/Becoming.jpg"
                     alt="Becoming"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Edit
                     </div>
@@ -513,23 +403,19 @@
                     <div class="project-director">
                         Zhannat Alshanova
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/HomeGame.jpg"
+                    data-src="/images/posters/HomeGame.jpg"
                     alt="Home Game"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Edit
                     </div>
@@ -541,23 +427,19 @@
                     <div class="project-director">
                         Lidija Zelovic
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/Zeghetalsjegaat.png"
+                    data-src="/images/posters/Zeghetalsjegaat.png"
                     alt="Zeg het als je gaat"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Design
                     </div>
@@ -569,23 +451,19 @@
                     <div class="project-director">
                         Matthijs Sluis
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/Januari_Poster_2024.jpg"
+                    data-src="/images/posters/Januari_Poster_2024.jpg"
                     alt="Januari"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Design w/ Levi Cuijpers and Zita Leemans
                     </div>
@@ -597,23 +475,19 @@
                     <div class="project-director">
                         Jetske Lieber
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/ToenWeJongensWaren_Poster_2024.jpg"
+                    data-src="/images/posters/ToenWeJongensWaren_Poster_2024.jpg"
                     alt="Toen We Jongens Waren"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Recording w/ Sanne Breij
                     </div>
@@ -625,23 +499,19 @@
                     <div class="project-director">
                         Merel Hogerheijde
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/Doodgewoon.jpg"
+                    data-src="/images/posters/Doodgewoon.jpg"
                     alt="Doodgewoon"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Mix
                     </div>
@@ -653,23 +523,19 @@
                     <div class="project-director">
                         Ronald Zuidinga
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/VadersZijnOokZonen_Poster.jpg"
+                    data-src="/images/posters/VadersZijnOokZonen_Poster.jpg"
                     alt="Vader zijn ook zonen"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Recording
                     </div>
@@ -681,23 +547,19 @@
                     <div class="project-director">
                         Sammy Shefa Idris
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/Kalf_Poster_2024.jpg"
+                    data-src="/images/posters/Kalf_Poster_2024.jpg"
                     alt="Kalf"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Mix
                     </div>
@@ -709,23 +571,19 @@
                     <div class="project-director">
                         Dirkje Duwel
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/HardcoreNeverDies.png"
+                    data-src="/images/posters/HardcoreNeverDies.png"
                     alt="Hardcore Never Dies"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Intern
                     </div>
@@ -737,51 +595,43 @@
                     <div class="project-director">
                         Jim Taihuttu
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/Turbine_Poster_2024.jpg"
+                    data-src="/images/posters/Turbine_Poster_2024.jpg"
                     alt="Turbine"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Effects Edit
                     </div>
 
                     <div class="project-title">
-                        Ventanas Abiertas
+                        Turbine
                     </div>
 
                     <div class="project-director">
-                        Jos Mauro Witteveen
+                        Tjeerd Dam
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/TheResurrectionofaLeaf_Poster_203.jpg"
+                    data-src="/images/posters/TheResurrectionofaLeaf_Poster_203.jpg"
                     alt="The Resurrection of a Leaf"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Effects Edit
                     </div>
@@ -793,23 +643,19 @@
                     <div class="project-director">
                         Lemuël de Graav
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/KingRidwan_Poster_2024.jpg"
+                    data-src="/images/posters/KingRidwan_Poster_2024.jpg"
                     alt="King Ridwan"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Recording
                     </div>
@@ -821,23 +667,19 @@
                     <div class="project-director">
                         Sammy Shefa Idris
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/WijWaren23_Poster_2023.jpg"
+                    data-src="/images/posters/WijWaren23_Poster_2023.jpg"
                     alt="Wij Waren 23"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Edit
                     </div>
@@ -849,23 +691,19 @@
                     <div class="project-director">
                         Matthijs Sluis
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/Ikmeervanjou_992x1440.png"
+                    data-src="/images/posters/Ikmeervanjou_992x1440.png"
                     alt="Ik meer van jou"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Design
                     </div>
@@ -877,23 +715,19 @@
                     <div class="project-director">
                         Nour Alkheder
                     </div>
-
                 </div>
-
             </article>
 
 
             
 
             <article class="project">
-
                 <img
-                    src="/yorn-slootjes/images/posters/Ventanas_Abiertas_Poster_2022.jpg"
+                    data-src="/images/posters/Ventanas_Abiertas_Poster_2022.jpg"
                     alt="Ventanas Abiertas"
                 >
 
                 <div class="project-overlay">
-
                     <div class="project-role">
                         Sound Effects Edit
                     </div>
@@ -905,18 +739,55 @@
                     <div class="project-director">
                         Jos Mauro Witteveen
                     </div>
-
                 </div>
-
             </article>
 
-
         </div>
-
     </main>
 
 
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const images = document.querySelectorAll("img[data-src]");
+
+            const loadImage = (img) => {
+
+                const src = img.dataset.src;
+
+                if (!src) return;
+
+                img.onload = () => {
+                    img.classList.add("loaded");
+                };
+
+                img.src = src;
+            };
+
+            const observer = new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            loadImage(entry.target);
+
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    rootMargin: "300px 0px"
+                }
+            );
+
+            images.forEach(img => observer.observe(img));
+
+        });
+    </script>
+
 </body>
-
 </html>
-
